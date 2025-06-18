@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# API kérések kezelése
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^api/(.*)$ api/index.php [QSA,L]
+#RewriteRule ^api/(.*)$ ../api/index.php [QSA,L]
+#RewriteRule ^/api/(.*)$ api/test.php [QSA,L]
+
+
+# Minden más kérés az index.php-ra
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

@@ -1,0 +1,52 @@
+/workshop/
+/.idea/
+
+# Composer
+/vendor/
+composer.phar
+
+# Környezeti változók, konfigurációk
+.env
+.env.*
+
+# Szerkesztők, IDE-k
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS fájlok
+.DS_Store
+Thumbs.db
+
+# Log, cache, temp
+*.log
+*.cache
+*.tmp
+*.swp
+
+# PHPUnit
+.phpunit.result.cache
+
+# SASS/SCSS cache
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# PHPStan, Psalm, PHP_CodeSniffer
+/phpstan.cache
+/.php_cs.cache
+/.php_cs.dist
+/.php-cs-fixer.cache
+
+# Egyéb build vagy szerverless fájlok
+/serverless/
+.serverless/
+
+# Node.js (ha van frontend)
+/node_modules/
+
+# Egyéni: saját temp vagy build mappák
+/build/
+tmp/

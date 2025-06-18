@@ -1,0 +1,20 @@
+{
+  "name": "brthprog/guestbook-project",
+  "description": "A simple guestbook application using Composer dependencies.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bartha Szabolcs",
+      "email": "szabyy72@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "phpmailer/phpmailer": "^6.10",
+    "ext-json": "*",
+    "ext-pdo": "*"
+  }
+
+
+}
