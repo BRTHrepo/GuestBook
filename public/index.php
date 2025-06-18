@@ -19,16 +19,20 @@ if (is_file($filePath)) {
 } else {
     echo "<script>console.log('Is not a file: $filePath');</script>";
 }
+if (preg_match('/(^|\/)\.[^\/]+/', $filePath)) {
+    http_response_code(403);
+    exit('Access denied.');
+}
 
-
-    if (file_exists($filePath) && is_file($filePath)) {
-        // Kérés átirányítása a megfelelő statikus fájlra
-        $mimeType = mime_content_type($filePath);
-        echo "<script>console.log('MIME type: $mimeType');</script>";
-        header("Content-Type: $mimeType");
-        readfile($filePath);
-        exit;
-    }
+if (file_exists($filePath) && is_file($filePath)) {
+    // Kérés átirányítása a megfelelő statikus fájlra
+    $mimeType = mime_content_type($filePath);
+    echo "<script>console.log('MIME type: $mimeType');</script>";
+    header("Content-Type: $mimeType");
+    readfile($filePath);
+    exit;
+}
 //echo "<script>console.log('---------------------------------------: $requestUri');</script>";
-    $controller = new MainController($requestUri);
-    $controller->handleRequest();
+
+$controller = new MainController($requestUri);
+$controller->handleRequest();

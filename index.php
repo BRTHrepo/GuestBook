@@ -22,7 +22,10 @@ if (is_file($filePath)) {
 } else {
     echo "<script>console.log('Is not a file: $filePath');</script>";
 }
-
+if (preg_match('/(^|\/)\.[^\/]+/', $filePath)) {
+    http_response_code(403);
+    exit('Access denied.');
+}
 
 if (file_exists($filePath) && is_file($filePath)) {
     // Kérés átirányítása a megfelelő statikus fájlra
